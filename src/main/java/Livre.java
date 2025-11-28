@@ -1,4 +1,4 @@
-package tp2;
+package main.java;
 
 public class Livre {
     public String libelle, auteur ;
