@@ -7,10 +7,12 @@
     <groupId>com.example</groupId>
     <artifactId>java_projet</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging> <!-- Changement ici pour générer un WAR -->
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>src</sourceDirectory> <!-- si tu laisses src, Maven buildera depuis src -->
         <plugins>
+            <!-- Plugin compilation Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -20,17 +22,14 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+
+            <!-- Plugin WAR pour Tomcat -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
                 <configuration>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                    <archive>
-                        <manifest>
-                            <mainClass>Main</mainClass>
-                        </manifest>
-                    </archive>
+                    <warName>${project.artifactId}</warName> <!-- nom du WAR -->
                 </configuration>
             </plugin>
         </plugins>
