@@ -46,7 +46,7 @@ public class Voiture {
         v1.kilomtrage=200;
         v1.affiche();
 
-        Voiture v2 = new Voiture("opel",5000);
+        Voiture v2 = new Voiture("opelopelopel",5000);
         v2.matricule ="11 tu 144";
         v2.prix = 250000;
         v2.affiche();
